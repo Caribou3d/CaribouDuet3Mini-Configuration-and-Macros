@@ -1,6 +1,6 @@
-# CaribouDuet-Config-and-Macros
+# CaribouDuet3Mini+-Lan-Configuration-and-Macros
 
-This repository contains the source code and the development versions of the configuration and macros running on the Original CaribouDuet line of printers.
+This repository contains the source code and the development versions of the configuration and macros running on the Original Caribou line of printers with Duet3Mini+ board.
 
 # Naming convention
 
