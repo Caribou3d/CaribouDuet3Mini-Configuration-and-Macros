@@ -7,7 +7,7 @@
 ; for #CARIBOU_VARIANT
 ;
 ; CariboDuetConfiguration Release : "0.1.0"
-;                           Build :   3
+;                           Build :   4
 ;
 ;
 ; Copyright Caribou Research & Development 2021. Licensed under GPL3.
@@ -75,6 +75,10 @@ M574 X1 S3                                             ; configure sensorless en
 M574 Y1 S3                                             ; configure sensorless endstop for low end on Y
 M574 Z1 S2                                             ; configure Z-probe endstop for low end on Z
 M574 Z2 S3                                             ; configure sensorless endstop for high end on Z
+;
+; =========================================================================================================
+;
+; #CARIBOU_ZPROBE
 ;
 ; =========================================================================================================
 ;
