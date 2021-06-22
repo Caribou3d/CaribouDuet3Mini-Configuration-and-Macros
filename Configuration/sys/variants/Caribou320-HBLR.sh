@@ -78,9 +78,9 @@ sed -i "
 ;\\
 M308 S1 P\"temp1\" Y\"thermistor\" T500000 B4723 C1.19622e-7 A\"Nozzle\"   ; SE configure sensor 0 as thermistor on pin e0temp\\
 ;\\
-M950 H1 C\"out1\" T1                                        ; create nozzle heater output on e0heat and map it to sensor 2\\
-M307 H1 B0 S1.00                                            ; disable bang-bang mode for heater  and set PWM limit\\
-M143 H1 S365                                                ; set temperature limit for heater 1 to 365°C
+M950 H1 C\"out1\" T1                                     ; create nozzle heater output on e0heat and map it to sensor 2\\
+M307 H1 B0 S1.00                                       ; disable bang-bang mode for heater  and set PWM limit\\
+M143 H1 S365                                           ; set temperature limit for heater 1 to 365°C
 };
 " $SysOutputPath/config.g
 
@@ -89,8 +89,8 @@ sed -i "
 {/#CARIBOU_ZPROBE/ c\
 ; BL-Touch Right \\
 ;\\
-M950 S0 C\"io1.out\"                                 ; sensor for BL-Touch\\
-M558 P9 C\"^io1.in\" H2.5 F200 T8000 A1 S0.03        ; for BL-Touch\\
+M950 S0 C\"io1.out\"                                     ; sensor for BL-Touch\\
+M558 P9 C\"^io1.in\" H2.5 F200 T8000 A1 S0.03            ; for BL-Touch\\
 M557 X30:230 Y0:200 P7                                 ; define mesh grid
 };
 {/#CARIBOU_OFFSETS/ c\
