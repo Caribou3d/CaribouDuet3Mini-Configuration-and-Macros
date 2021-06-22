@@ -1,13 +1,13 @@
 ; =========================================================================================================
 ;
-; Configuration file for Duet 3 Mini 5+ for testing only 2020-07-15
+; Configuration file for Duet 3 Mini 5+ (firmware version 3.3RC3)
 ;
 ; for 0.9° motors on xye
 ;
 ; for #CARIBOU_VARIANT
 ;
-; CariboDuetConfiguration Release : "0.1.0"
-;                           Build :   4
+; CariboDuetConfiguration Release : "0.1.1"
+;                           Build :   5
 ;
 ;
 ; Copyright Caribou Research & Development 2021. Licensed under GPL3.
@@ -29,11 +29,11 @@ M575 P1 B57600 S1                                      ; enable support for Pane
 ; Drives
 ; =========================================================================================================
 ;
-M569 P0.0 S0 D3 V100                                   ; physical drive 2 goes backwards - z - left
-M569 P0.1 S0 D3 V100                                   ; physical drive 0.0 goes forwards (x)
-M569 P0.2 S0 D3 V100                                   ; physical drive 1 goes backwards - y-axis
-M569 P0.3 S0 D3 V100                                   ; physical drive 4 goes backwards - z right
-M569 P0.4 D3 V1000                                     ; physical drive 3 goes forwards  - Extruder
+M569 P0.0 S0 D3 V1000                                  ; physical drive 0.0 goes backwards - z - left
+M569 P0.1 S0 D3 V2000                                  ; physical drive 0.1 goes backwards - x-axis
+M569 P0.2 S0 D3 V2000                                  ; physical drive 0.2 goes backwards - y-axis
+M569 P0.3 S0 D3 V1000                                  ; physical drive ß.3 goes backwards - z - right
+M569 P0.4 D3 V1000                                     ; physical drive 0.4 goes forwards  - extruder
 ;
 ; Motor Configuration
 ;
@@ -43,7 +43,7 @@ M671 X-36.5:293.5 Y0:0 S1.00                           ; leadscrews at left (con
 ; set Microsteps and steps / mm
 ;
 M350 X16 Y16 Z16 E16 I1                                ; configure microstepping with interpolation
-M92 X200.00 Y200.00 Z400.00 E#CARIBOU_EESTEPS                       ; set steps per mm
+M92 X200.00 Y200.00 Z400.00 E#CARIBOU_EESTEPS                    ; set steps per mm
 ;
 ; set motor currents
 ;
@@ -82,13 +82,13 @@ M574 Z2 S3                                             ; configure sensorless en
 ;
 ; =========================================================================================================
 ;
-M574 Z1 S2                                               ; set endstops controlled by probe
+M574 Z1 S2                                             ; set endstops controlled by probe
 ;
 ; Stallguard Sensitivy
 ;
-M915 X S1 F0 H200 R0                                     ; set X axis Sensitivity
-M915 Y S1 F0 H200 R0                                     ; set Y axis Sensitivity
-M915 Z S1 F0 H200 R0                                     ; set Z axis Sensitivity
+M915 X S1 F0 H200 R0                                   ; set X axis Sensitivity
+M915 Y S1 F0 H200 R0                                   ; set Y axis Sensitivity
+M915 Z S1 F0 H200 R0                                   ; set Z axis Sensitivity
 ;
 ; =========================================================================================================
 ; Heater & Fans
@@ -97,11 +97,11 @@ M915 Z S1 F0 H200 R0                                     ; set Z axis Sensitivit
 ; heated bed
 ; =========================================================================================================
 ;
-M308 S0 P"temp0" Y"thermistor" T100000 B4138 A"Bed"      ; configure sensor 0 as thermistor on pin bedtemp
-M950 H0 C"out0" Q50 T0                                   ; create bed heater output on bedheat and map it to sensor 0
-M143 H0 S110                                             ; set temperature limit for heater 0 to 110C
-M307 H0 B0 S1.00                                         ; disable bang-bang mode for the bed heater and set PWM limit
-M140 H0                                                  ; map heated bed to heater 0
+M308 S0 P"temp0" Y"thermistor" T100000 B4138 A"Bed"    ; configure sensor 0 as thermistor on pin bedtemp
+M950 H0 C"out0" Q50 T0                                 ; create bed heater output on bedheat and map it to sensor 0
+M143 H0 S110                                           ; set temperature limit for heater 0 to 110C
+M307 H0 B0 S1.00                                       ; disable bang-bang mode for the bed heater and set PWM limit
+M140 H0                                                ; map heated bed to heater 0
 ;
 ; extruder
 ; =========================================================================================================
@@ -135,7 +135,7 @@ M302 S#CARIBOU_MINEXTRUDETEMP R#CARIBOU_MINRETRACTTEMP                          
 ; other settings
 ; =========================================================================================================
 ;
-M18 XY                                                 ; release / unlock X, Y, and E axis
+M18 XY                                                 ; release / unlock X, Y
 M501                                                   ; use config-override (for Thermistor Parameters and other settings)
 G90                                                    ; send absolute coordinates...
 M83                                                    ; ... but relative extruder moves
@@ -158,4 +158,3 @@ M98 P"0:/sys/00-Functions/FilamentsensorStatus"
 ;
 ; =========================================================================================================
 ;
-
