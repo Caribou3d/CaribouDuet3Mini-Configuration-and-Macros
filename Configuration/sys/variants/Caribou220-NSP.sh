@@ -75,9 +75,9 @@ sed -i "
 ;\\
 M308 S1 P\"temp1\" Y\"thermistor\" T100000 B4725 C7.060000e-8 A\"Nozzle E1\"  ; E3d configure sensor 0 as thermistor on pin e0temp\\
 ;\\
-M950 H1 C\"out1\" T1                                        ; create nozzle heater output on e0heat and map it to sensor 2\\
-M307 H1 B0 S1.00                                            ; disable bang-bang mode for heater  and set PWM limit\\
-M143 H1 S280                                                ; set temperature limit for heater 1 to 280°C
+M950 H1 C\"out1\" T1                                     ; create nozzle heater output on e0heat and map it to sensor 2\\
+M307 H1 B0 S1.00                                       ; disable bang-bang mode for heater  and set PWM limit\\
+M143 H1 S280                                           ; set temperature limit for heater 1 to 280°C
 };
 " $SysOutputPath/config.g
 
@@ -86,8 +86,8 @@ sed -i "
 {/#CARIBOU_ZPROBE/ c\
 ; SuperPINDA \\
 ;\\
-M558 P5 C\"^io1.in\" H1.5 F600 T8000 A3 S0.03             ; set z probe to SuperPINDA\\
-M557 X23:235 Y5:186 S30.25:30                               ; define mesh grid
+M558 P5 C\"^io1.in\" H1.5 F600 T8000 A3 S0.03            ; set z probe to SuperPINDA\\
+M557 X23:235 Y5:186 S30.25:30                          ; define mesh grid
 };
 {/#CARIBOU_OFFSETS/ c\
 G31 P1000 X23 Y5
