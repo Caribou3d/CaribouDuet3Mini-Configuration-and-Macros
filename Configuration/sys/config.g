@@ -1,13 +1,13 @@
 ; =========================================================================================================
 ;
-; Configuration file for Duet 3 Mini 5+ (firmware version 3.3RC3)
+; Configuration file for Duet 3 Mini 5+ (firmware version 3.3)
 ;
 ; for 0.9° motors on xye
 ;
 ; for #CARIBOU_VARIANT
 ;
-; CariboDuetConfiguration Release : "0.1.1"
-;                           Build :   7
+; CariboDuetConfiguration Release : "0.1.2"
+;                           Build :   8
 ;
 ;
 ; Copyright Caribou Research & Development 2021. Licensed under GPL3.

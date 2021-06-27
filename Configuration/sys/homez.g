@@ -2,7 +2,7 @@
 ;
 ; Home xyz Axis
 ;
-; for Caribou220 LGX - E3d or SE Thermistor - PINDA2
+; for #CARIBOU_VARIANT
 ;
 ; =========================================================================================================
 ;
@@ -48,8 +48,8 @@ G90                                                    ; absolute positioning
 ; =========================================================================================================
 ;
 G90                                                    ; absolute positioning
-;
-G1 X11.5 Y-3 F6000                                     ; go to first probe point
+; #CARIBOU_ZPROBE
+#CARIBOU_MEASUREPOINT
 G30                                                    ; home z by probing the bed
 G1 Z1.15 F100                                          ; move z to origin and 1.15mm above bed
 G90                                                    ; absolute positioning
