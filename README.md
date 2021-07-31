@@ -1,4 +1,4 @@
-# CaribouDuet3Mini+-Lan-Configuration-and-Macros
+# CaribouDuet3Mini+-Ethernet-Configuration-and-Macros
 
 This repository contains the source code and the development versions of the configuration and macros running on the Original Caribou line of printers with Duet3Mini+ board.
 
@@ -41,11 +41,7 @@ In your preferred Unix environment follow these steps
 3. execute `./CC-build.sh`
 4. select the desired configuration or build all configurations
 5. in case you only built one version you will find a zipped output file in `../CC-build`
-6. in case you built all versions copy `./sort.sh` to `../CC-build`
-7. change to th edirectory `../CC-build`
-8. execute `./sort.sh`. Options are the start and target directory for the sorted files example `./sort.sh CC110-Build26/ CC110-Build26-sorted
-`
-9. the script will create all required directories and sort the out that was generated buy `CC-build.sh`
+6. in case you built all versions output files are automatically sorted into a a "sorted" directory
 
 # Set-up
 
