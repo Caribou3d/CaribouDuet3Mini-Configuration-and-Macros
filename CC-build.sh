@@ -466,12 +466,7 @@ do
         rm -fr $OUTPUT || exit 27
         mkdir -p $OUTPUT || exit 27
     fi
-    # =========================================================================================================
-    # copy drivers
-    INPUT=$SCRIPT_PATH/DuetDriver
-    OUTPUT=$VARIANTOUTPUT/
-    cp -r $INPUT/* $OUTPUT
-
+    
     # =========================================================================================================
     # create zip-file for configuration
     echo
