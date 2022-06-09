@@ -1,4 +1,4 @@
-# CaribouDuet3Mini+-Ethernet-Configuration-and-Macros
+# CaribouDuet3Mini+-WiFi-Ethernet-Configuration-and-Macros
 
 This repository contains the source code and the development versions of the configuration and macros running on the Original Caribou line of printers with Duet3Mini+ board.
 
