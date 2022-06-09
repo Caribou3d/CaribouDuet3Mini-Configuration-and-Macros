@@ -1,13 +1,13 @@
 ; =========================================================================================================
 ;
-; Configuration file for Duet 3 Mini 5+ (firmware version 3.3)
+; Configuration file for Duet 3 Mini 5+ (firmware version 3.4)
 ;
-; for 0.9° motors on xye
+; for 0.9° motors on xy, and 0.9° or 1.8° (only LGXM) motor e
 ;
 ; for #CARIBOU_VARIANT
 ;
-; CariboDuetConfiguration Release : "1.0.0"
-;                           Build :   19
+; CariboDuetConfiguration Release : "1.9.1"
+;                           Build :   20
 ;
 ;
 ; Copyright Caribou Research & Development 2021. Licensed under GPL3.
@@ -17,7 +17,7 @@
 ; Network settings
 ; =========================================================================================================
 ;
-M550 P"#CARIBOU_NAME"                                 ; set printer name
+M550 P"#CARIBOU_NAME"                           ; set printer name
 ;
 M552 S1                                                ; enable network
 M586 P0 S1                                             ; enable HTTP
