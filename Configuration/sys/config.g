@@ -7,7 +7,7 @@
 ; for #CARIBOU_VARIANT
 ;
 ; CariboDuetConfiguration Release : "1.9.1"
-;                           Build :   20
+;                           Build :   21
 ;
 ;
 ; Copyright Caribou Research & Development 2021. Licensed under GPL3.
@@ -17,13 +17,13 @@
 ; Network settings
 ; =========================================================================================================
 ;
-M550 P"#CARIBOU_NAME"                           ; set printer name
+M550 P"#CARIBOU_NAME"                                 ; set printer name
 ;
 M552 S1                                                ; enable network
 M586 P0 S1                                             ; enable HTTP
 M586 P1 S1                                             ; enable FTP
 M586 P2 S0                                             ; disable Telnet
-M575 P1 B57600 S1                                      ; enable support for PanelDue
+M575 P1 S1 B57600                                      ; enable support for PanelDue
 ;
 ; =========================================================================================================
 ; Drives
@@ -47,14 +47,14 @@ M92 X200.00 Y200.00 Z400.00 E#CARIBOU_EESTEPS                    ; set steps per
 ;
 ; set motor currents
 ;
-M906 X1250 Y1250 Z600 E750 I40                         ; set motor currents (mA) and motor idle factor in per cent
+; #CARIBOU_MOTOR_CURRENTS
 ;
-M84 S60                                                ; set idle timeout
+M84 S60                                                ; Set idle timeout
 ;
 ; set speeds
 ;
 M201 X500.00 Y500.00 Z100.00 E500.00                   ; set accelerations (mm/s^2)
-M203 X9000.00 Y9000.00 Z1000.00 E3600.00               ; set maximum speeds (mm/min)
+M203 X12000.00 Y12000.00 Z1000.00 E3600.00             ; set maximum speeds (mm/min)
 M204 P500.0 T500.0                                     ; set print and travel accelerations (mm(s^2)
 M566 X480.00 Y480.00 Z48.00 E300.00                    ; set maximum instantaneous speed changes (mm/min)
 ;
@@ -65,16 +65,16 @@ M564 H0                                                ; allow unhomed movement
 ; =========================================================================================================
 ;
 M208 X-2 Y-7.5 Z0 S1                                   ; set axis minima
-M208 X254.6 Y214 Z225.50 S0                            ; set axis maxima
+M208 X254.6 Y214 #CARIBOU_ZHEIGHT S0                            ; set axis maxima
 ;
 ; =========================================================================================================
 ; Endstops
 ; =========================================================================================================
 ;
-M574 X1 S3                                             ; configure sensorless endstop for low end on X
-M574 Y1 S3                                             ; configure sensorless endstop for low end on Y
-M574 Z1 S2                                             ; configure Z-probe endstop for low end on Z
-M574 Z2 S3                                             ; configure sensorless endstop for high end on Z
+M574 X1 S3                                             ; configure sensorless endstop for low end on x
+M574 Y1 S3                                             ; configure sensorless endstop for low end on y
+M574 Z1 S2                                             ; configure z-probe endstop for low end on z
+M574 Z2 S3                                             ; configure sensorless endstop for high end on z
 ;
 ; =========================================================================================================
 ;
@@ -109,6 +109,11 @@ M140 H0                                                ; map heated bed to heate
 ; #CARIBOU_HOTEND_THERMISTOR
 ;
 ; =========================================================================================================
+;
+M308 S4 P"mcu-temp" Y"mcu-temp" A"MCU"                 ; set virtual heater for MCU
+M308 S5 P"drivers" Y"drivers" A"Driver"                ; set virtual heater for stepper drivers
+;
+; =========================================================================================================
 ; Fans
 ; =========================================================================================================
 ;
@@ -135,7 +140,7 @@ M302 S#CARIBOU_MINEXTRUDETEMP R#CARIBOU_MINRETRACTTEMP                          
 ; other settings
 ; =========================================================================================================
 ;
-M18 XY                                                 ; release / unlock X, Y
+M18 XY                                                 ; release / unlock x, y
 M501                                                   ; use config-override (for Thermistor Parameters and other settings)
 G90                                                    ; send absolute coordinates...
 M83                                                    ; ... but relative extruder moves
@@ -144,13 +149,13 @@ M83                                                    ; ... but relative extrud
 ;  filament handling
 ; =========================================================================================================
 ;
-; execute macros that has the status of the filament sensor
+; execute macros that determine the status of the filament sensor
 ;
 M98 P"0:/sys/00-Functions/FilamentsensorStatus"
 ;
 ; =========================================================================================================
 ;
-;; =========================================================================================================
+; =========================================================================================================
 ;
 ; Offsets - place off-sets for x and y here. z-offsets are handled in the print sheet macros
 ;

@@ -24,15 +24,15 @@
 # 28 May 2021, wschadow, added generation of SlicerScripts.zip
 # 01 Jun 2021, wschadow, included all subdirectories of SlicerScripts
 # 02 Jun 2021, wschadow, corrected zip command for SlicerScripts to include Porfiles and exclude processed folder
+# 13 Jun 2021, wschadow, changed output path to avoid collisions with Duet3Mini+ version
 # 31 Jul 2021, wschadow, added www, and driver, full content of SD-card is generated
 # 31 Jul 2021, wschadow, when all configurations are build, the output will be sorted
-
-# Copyright Caribou Research & Development 2021. Licensed under GPL3.
-# Source code and release notes are available on github: https://github.com/Caribou3d/CaribouDuet-Configuration-and-Macros
+#
+# Copyright Caribou Research & Development 2021. Licensed under GPL3. Non-commercial use only.
+# Source code and release notes are available on github: https://github.com/Caribou3d/CaribouDuet2-ConfigurationMacros
 #
 # =========================================================================================================
 #
-
 #### Start check if OSTYPE is supported
 OS_FOUND=$( command -v uname)
 case $( "${OS_FOUND}" | tr '[:upper:]' '[:lower:]') in
@@ -320,7 +320,6 @@ do
     echo "Build #       :" $BUILD
     echo "Config Folder :" "CC-build/CC-Duet3Mini-$CC-Build$BUILD"
     echo "$(tput sgr0)"
-    BUILDPATH=$SCRIPT_PATH/../CC-build/CC-Duet3Mini-$CC-Build$BUILD
     VARIANTOUTPUT=$BUILDPATH/Duet3Mini-$VARIANT
     # prepare output folder
     if [ ! -d "$VARIANTOUTPUT" ]; then
@@ -466,7 +465,12 @@ do
         rm -fr $OUTPUT || exit 27
         mkdir -p $OUTPUT || exit 27
     fi
-    
+    # =========================================================================================================
+    # copy drivers
+    INPUT=$SCRIPT_PATH/DuetDriver
+    OUTPUT=$VARIANTOUTPUT/
+    cp -r $INPUT/* $OUTPUT
+
     # =========================================================================================================
     # create zip-file for configuration
     echo

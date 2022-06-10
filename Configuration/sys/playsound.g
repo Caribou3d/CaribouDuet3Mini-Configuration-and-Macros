@@ -3,7 +3,7 @@
 ; play little start tune
 ;
 ; =========================================================================================================
-; start! tune
+; Start! tune
 ;
 M400                     ; finish all moves, clear the buffer
 G4 S1                    ; wait 1 second
