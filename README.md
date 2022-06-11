@@ -1,4 +1,4 @@
-# CaribouDuet3Mini+-WiFi-Ethernet-Configuration-and-Macros
+# CaribouDuet3Mini5+-WiFi-Ethernet-Configuration-and-Macros
 
 This repository contains the source code and the development versions of the configuration and macros running on the Original Caribou line of printers with Duet3Mini+ board.
 
@@ -37,7 +37,7 @@ CaribouDuet320-HBLL = 320 version with SE HT thermistor and BL-Touch Left
 In your preferred Unix environment follow these steps
 
 1. Clone this repository and checkout the correct branch for your desired release version.
-2. change into the directory `CaribouDuet-Configuration-and-Macros`
+2. change into the directory `CaribouDuet3Mini5-ConfigurationMacros`
 3. execute `./CC-build.sh`
 4. select the desired configuration or build all configurations
 5. in case you only built one version you will find a zipped output file in `../CC-build`
