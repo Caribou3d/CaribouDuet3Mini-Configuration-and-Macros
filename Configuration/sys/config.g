@@ -7,11 +7,11 @@
 ; for #CARIBOU_VARIANT
 ;
 ; CariboDuetConfiguration Release : "1.9.1"
-;                           Build :   26
+;                           Build :   27
 ;
 ;
 ; Copyright Caribou Research & Development 2021. Licensed under GPL3.
-; Source code and release notes are available on github: https://github.com/Caribou3d/CaribouDuet3Mini-ConfigurationMacros
+; Source code and release notes are available on github: https://github.com/Caribou3d/CaribouDuet3Mini5ConfigurationMacros
 ;
 ; =========================================================================================================
 ; Network settings

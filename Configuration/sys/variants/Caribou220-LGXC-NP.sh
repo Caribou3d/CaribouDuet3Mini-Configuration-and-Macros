@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # =========================================================================================================
-# definition for Caribou220 Duet3Mini+ LGXC - E3d or SE Thermistor - PINDA2
+# definition for Caribou220 Duet3Mini5+ LGXC - E3d or SE Thermistor - PINDA2
 # =========================================================================================================
 
-CARIBOU_VARIANT="Caribou220 Duet3Mini+ LGXC - E3d or SE Thermistor - PINDA2"
+CARIBOU_VARIANT="Caribou220 Duet3Mini5+ LGXC - E3d or SE Thermistor - PINDA2"
 CARIBOU_NAME="Caribou220-LGXC-NP"
 CARIBOU_ZHEIGHTLEVELING="Z214"
 CARIBOU_ZHEIGHT="Z225.50"

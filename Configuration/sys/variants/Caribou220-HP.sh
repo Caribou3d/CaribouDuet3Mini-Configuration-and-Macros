@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # =========================================================================================================
-# definition for Caribou220 Duet3Mini+ Bondtech - SE HT Thermistor - PINDA2
+# definition for Caribou220 Duet3Mini5+ Bondtech - SE HT Thermistor - PINDA2
 # =========================================================================================================
 
-CARIBOU_VARIANT="Caribou220 Duet3Mini+ Bondtech - SE HT Thermistor - PINDA2"
+CARIBOU_VARIANT="Caribou220 Duet3Mini5+ Bondtech - SE HT Thermistor - PINDA2"
 CARIBOU_NAME="Caribou220-HP"
 CARIBOU_ZHEIGHTLEVELING="Z205"
 CARIBOU_ZHEIGHT="Z216.50"

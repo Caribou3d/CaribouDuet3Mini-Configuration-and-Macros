@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # =========================================================================================================
-# definition for Caribou420 Duet3Mini+ Bondtech  - E3d or SE Thermistor - BL-Touch Left
+# definition for Caribou420 Duet3Mini5+ Bondtech  - E3d or SE Thermistor - BL-Touch Left
 # =========================================================================================================
 
-CARIBOU_VARIANT="Caribou420 Duet3Mini+ Bondtech  - E3d or SE Thermistor - BL-Touch Left"
+CARIBOU_VARIANT="Caribou420 Duet3Mini5+ Bondtech  - E3d or SE Thermistor - BL-Touch Left"
 CARIBOU_NAME="Caribou420-NBLL"
 CARIBOU_ZHEIGHTLEVELING="Z405"
 CARIBOU_ZHEIGHT="Z416.50"

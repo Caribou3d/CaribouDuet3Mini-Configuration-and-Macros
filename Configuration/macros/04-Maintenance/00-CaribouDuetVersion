@@ -4,7 +4,7 @@
 ;
 ; =========================================================================================================
 ;
-M291 P{"CaribouDuet3Mini+ Version: #CARIBOUDUETVERSION, build: #CARIBOUDUETBUILD "  } S2
+M291 P{"CaribouDuet3Mini5+ Version: #CARIBOUDUETVERSION, build: #CARIBOUDUETBUILD "  } S2
 ;
 ; =========================================================================================================
 ;

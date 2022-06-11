@@ -24,7 +24,7 @@
 # 28 May 2021, wschadow, added generation of SlicerScripts.zip
 # 01 Jun 2021, wschadow, included all subdirectories of SlicerScripts
 # 02 Jun 2021, wschadow, corrected zip command for SlicerScripts to include Porfiles and exclude processed folder
-# 13 Jun 2021, wschadow, changed output path to avoid collisions with Duet3Mini+ version
+# 13 Jun 2021, wschadow, changed output path to avoid collisions with Duet3Mini5+ version
 # 31 Jul 2021, wschadow, added www, and driver, full content of SD-card is generated
 # 31 Jul 2021, wschadow, when all configurations are build, the output will be sorted
 # 11 Jun 2011, wschadow, added a counter, added generation of a zip for all configurations
@@ -313,7 +313,7 @@ if [ $TotalCount == 0 ]; then
     TotalCount=1
 fi
 
-BUILDPATH=$SCRIPT_PATH/../CC-build/CC-Duet3Mini-$CC-Build$BUILD
+BUILDPATH=$SCRIPT_PATH/../CC-build/CC-Duet3Mini5-$CC-Build$BUILD
 # Prepare config files folders
 if [ ! -d "$BUILDPATH" ]; then
     mkdir -p $BUILDPATH || exit 27
@@ -330,9 +330,9 @@ do
     echo "Variant       :" $VARIANT
     echo "Configuration :" $CC
     echo "Build #       :" $BUILD
-    echo "Config Folder :" "CC-build/CC-Duet3Mini-$CC-Build$BUILD" "$(tput sgr0)"
+    echo "Config Folder :" "CC-build/CC-Duet3Mini5-$CC-Build$BUILD" "$(tput sgr0)"
 
-    VARIANTOUTPUT=$BUILDPATH/Duet3Mini-$VARIANT
+    VARIANTOUTPUT=$BUILDPATH/Duet3Mini5-$VARIANT
     # prepare output folder
     if [ ! -d "$VARIANTOUTPUT" ]; then
         mkdir -p $VARIANTOUTPUT || exit 27
@@ -488,7 +488,7 @@ do
     echo
     echo '   creating zip file for configuration ....'
     # delete possibly existing output file
-    OUTPUT=$BUILDPATH/CC$CC-Duet3Mini-$VARIANT-Build$BUILD.zip
+    OUTPUT=$BUILDPATH/CC$CC-Duet3Mini5-$VARIANT-Build$BUILD.zip
     if [ -f "$OUTPUT" ]; then
         rm -f $OUTPUT || exit 27
     fi
