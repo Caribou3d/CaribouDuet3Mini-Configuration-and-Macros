@@ -15,9 +15,9 @@ G1 H2 Z5 F6000                                         ; lift z relative to curr
 M400                                                   ; wait for current moves to finish
 ;
 G1 H1 X5 F1000                                         ; move slowly away
-G1 H1 X-260 F2200                                      ; move quickly to X axis endstop and stop there (first pass)
+G1 H1 X-260 F3000                                      ; move quickly to X axis endstop and stop there (first pass)
 G1 H2 X5 F1000                                         ; go back a few mm
-G1 H1 X-10 F2200                                       ; move slowly to x axis endstop once more (second pass)
+G1 H1 X-10 F3000                                       ; move slowly to x axis endstop once more (second pass)
 G1 H2 Z-5 F6000                                        ; lower z again
 ;
 M400                                                   ; wait for current moves to finish
