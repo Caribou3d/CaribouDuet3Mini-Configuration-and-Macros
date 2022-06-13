@@ -53,7 +53,7 @@ sed "
 {s/G30 P0 X25 Y105 Z-99999    /G30 P0 X35 Y115.5 Z-99999/};
 {s/G30 P1 X240 Y105 Z-99999 S2    /G30 P1 X240 Y115.5 Z-99999 S2/};
 {/#CARIBOU_ZPROBERESET/ c\
-M558 F400 T8000 A1 S0.03                               ; for BL-Touch
+M558 F400 T8000 A1 S0.03                                               ; for BL-Touch
 };
 " < ../bed.g > $SysOutputPath/bed.g
 
@@ -74,7 +74,7 @@ sed "
 # replacements for motor currents
 sed -i "
 {/#CARIBOU_MOTOR_CURRENTS/ c\
-M906 X1250 Y1250 Z650 E900 I40                         ; set motor currents (mA) and motor idle factor in percent 
+M906 X1250 Y1250 Z650 E900 I40                                         ; set motor currents (mA) and motoridle factor in percent
 };
 " $SysOutputPath/config.g
 
@@ -113,16 +113,16 @@ sed "
 {s/#CARIBOU_VARIANT/$CARIBOU_VARIANT/};
 {s/#CARIBOU_MEASUREPOINT/G1 X97.5 Y115.5 F5000                                  ; go to center of the bed/};
 {/#CARIBOU_ZPROBE/ c\
-M280 P0 S160                                           ; BLTouch, alarm release\\
-G4 P100                                                ; BLTouch, delay for the release command
+M280 P0 S160                                                           ; BLTouch, alarm release\\
+G4 P100                                                                ; BLTouch, delay for the release command
 };
 " < ../homez.g > $SysOutputPath/homez.g
 
 sed "
 {s/#CARIBOU_VARIANT/$CARIBOU_VARIANT/};
 {/#CARIBOU_ZPROBE/ c\
-M280 P0 S160                           ; BLTouch, alarm release\\
-G4 P100                                ; BLTouch, delay for the release command
+M280 P0 S160                                                           ; BLTouch, alarm release\\
+G4 P100                                                                ; BLTouch, delay for the release command
 };
 " < ../start.g > $SysOutputPath/start.g
 
@@ -146,7 +146,7 @@ find $MacrosDir/* -maxdepth 0  ! \( -name "*Main*" -o -name "*Preheat*" -o -name
 mkdir $MacroOutputPath/04-Maintenance
 find $MacrosDir/04-Maintenance/* -maxdepth 0  ! \( -name "*First*" \) -exec cp -r -t  $MacroOutputPath/04-Maintenance {} \+
 cp -r $MacrosDir/04-Maintenance/01-First_Layer_Calibration/processed $MacroOutputPath/04-Maintenance/01-First_Layer_Calibration
-cp -r $MacrosDir/00-Preheat/processed $MacroOutputPath/00-Preheat
+cp -r $MacrosDir/00-Preheat_Extruder/processed $MacroOutputPath/00-Preheat_Extruder
 
 # create 00-Test_Homing
 #

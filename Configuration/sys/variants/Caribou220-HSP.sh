@@ -71,7 +71,7 @@ sed "
 # replacements for motor currents
 sed -i "
 {/#CARIBOU_MOTOR_CURRENTS/ c\
-M906 X1250 Y1250 Z650 E900 I40                         ; set motor currents (mA) and motor idle factor in percent 
+M906 X1250 Y1250 Z650 E900 I40                                         ; set motor currents (mA) and motoridle factor in percent
 };
 " $SysOutputPath/config.g
 
@@ -82,9 +82,9 @@ sed -i "
 ;\\
 M308 S1 P\"temp1\" Y\"thermistor\" T500000 B4723 C1.19622e-7 A\"Nozzle\"   ; SE configure sensor 0 as thermistor on pin e0temp\\
 ;\\
-M950 H1 C\"out1\" T1                                     ; create nozzle heater output on e0heat and map it to sensor 1\\
-M307 H1 B0 S1.00                                       ; disable bang-bang mode for heater 1 and set PWM limit\\
-M143 H1 S365                                           ; set temperature limit for heater 1 to 365°C
+M950 H1 C\"out1\" T1                                                     ; create nozzle heater output on e0heat and map it to sensor 1\\
+M307 H1 B0 S1.00                                                       ; disable bang-bang mode for heater 1 and set PWM limit\\
+M143 H1 S365                                                           ; set temperature limit for heater 1 to 365°C
 };
 " $SysOutputPath/config.g
 
@@ -139,7 +139,7 @@ find $MacrosDir/* -maxdepth 0  ! \( -name "*Main*" -o -name "05-BL-Touch" -o -na
 mkdir $MacroOutputPath/04-Maintenance
 find $MacrosDir/04-Maintenance/* -maxdepth 0  ! \( -name "*First*" \) -exec cp -r -t  $MacroOutputPath/04-Maintenance {} \+
 cp -r $MacrosDir/04-Maintenance/01-First_Layer_Calibration/processed $MacroOutputPath/04-Maintenance/01-First_Layer_Calibration
-cp -r $MacrosDir/00-Preheat/processed $MacroOutputPath/00-Preheat
+cp -r $MacrosDir/00-Preheat_Extruder/processed $MacroOutputPath/00-Preheat_Extruder
 
 # create 00-Test_Homing
 #
