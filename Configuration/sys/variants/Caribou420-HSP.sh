@@ -50,7 +50,7 @@ cp -r ../00-Functions $SysOutputPath
 sed "
 {s/#CARIBOU_VARIANT/$CARIBOU_VARIANT/};
 {/#CARIBOU_ZPROBERESET/ c\
-M558 F600 T8000 A3 S0.03                               ; for SuperPINDA
+M558 F600 T8000 A3 S0.03                                               ; for SuperPINDA
 };
 " < ../bed.g > $SysOutputPath/bed.g
 
@@ -80,7 +80,7 @@ sed -i "
 {/#CARIBOU_HOTEND_THERMISTOR/ c\
 ; Hotend (Mosquito or Mosquito Magnum with SE Thermistor) \\
 ;\\
-M308 S1 P\"temp1\" Y\"thermistor\" T500000 B4723 C1.19622e-7 A\"Nozzle\"   ; SE configure sensor 0 as thermistor on pin e0temp\\
+M308 S1 P\"temp1\" Y\"thermistor\" T500000 B4723 C1.19622e-7 A\"Nozzle\"     ; SE configure sensor 0 as thermistor on pin e0temp\\
 ;\\
 M950 H1 C\"out1\" T1                                                     ; create nozzle heater output on e0heat and map it to sensor 1\\
 M307 H1 B0 S1.00                                                       ; disable bang-bang mode for heater 1 and set PWM limit\\
@@ -93,8 +93,8 @@ sed -i "
 {/#CARIBOU_ZPROBE/ c\
 ; SuperPINDA \\
 ;\\
-M558 P5 C\"^io1.in\" H1.5 F600 T8000 A3 S0.03            ; set z probe to SuperPINDA\\
-M557 X23:235 Y5:186 S30.25:30                          ; define mesh grid
+M558 P5 C\"^io1.in\" H1.5 F600 T8000 A3 S0.03                            ; set z probe to SuperPINDA\\
+M557 X23:235 Y5:186 S30.25:30                                          ; define mesh grid
 };
 {/#CARIBOU_OFFSETS/ c\
 G31 P1000 X23 Y5
@@ -107,7 +107,7 @@ G31 P1000 X23 Y5
 
 sed "
 {s/#CARIBOU_VARIANT/$CARIBOU_VARIANT/}
-{s/#CARIBOU_MEASUREPOINT/G1 X11.5 Y4.5 F6000                                    ; go to first probe point/};
+{s/#CARIBOU_MEASUREPOINT/G1 X11.5 Y4.5 F6000                                                    ; go to first probe point/};
 {/#CARIBOU_ZPROBE/ c\
 ;
 };" < ../homez.g > $SysOutputPath/homez.g

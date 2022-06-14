@@ -83,11 +83,11 @@ sed -i "
 {/#CARIBOU_HOTEND_THERMISTOR/ c\
 ; Hotend (Mosquito or Mosquito Magnum with E3d Thermistor) \\
 ;\\
-M308 S1 P\"temp1\" Y\"thermistor\" T100000 B4725 C7.060000e-8 A\"Nozzle E1\"  ; E3d configure sensor 0 as thermistor on pin e0temp\\
+M308 S1 P\"temp1\" Y\"thermistor\" T100000 B4725 C7.060000e-8 A\"Nozzle E1\" ; E3d configure sensor 0 as thermistor on pin e0temp\\
 ;\\
-M950 H1 C\"out1\" T1                                     ; create nozzle heater output on e0heat and map it to sensor 1\\
-M307 H1 B0 S1.00                                       ; disable bang-bang mode for heater 1 and set PWM limit\\
-M143 H1 S280                                           ; set temperature limit for heater 1 to 280°C
+M950 H1 C\"out1\" T1                                                     ; create nozzle heater output on e0heat and map it to sensor 1\\
+M307 H1 B0 S1.00                                                       ; disable bang-bang mode for heater 1 and set PWM limit\\
+M143 H1 S280                                                           ; set temperature limit for heater 1 to 280°C
 };
 " $SysOutputPath/config.g
 
@@ -96,8 +96,8 @@ sed -i "
 {/#CARIBOU_ZPROBE/ c\
 ; BL-Touch Left \\
 ;\\
-M950 S0 C\"io1.out\"                                     ; sensor for BL-Touch\\
-M558 P9 C\"^io1.in\" H2.5 F400 T8000 A1 S0.03            ; for BL-Touch\\
+M950 S0 C\"io1.out\"                                                     ; sensor for BL-Touch\\
+M558 P9 C\"^io1.in\" H2.5 F400 T8000 A1 S0.03                            ; for BL-Touch\\
 M557 X10:220 Y1:176 P7                                                 ; define mesh grid
 };
 {/#CARIBOU_OFFSETS/ c\
@@ -111,7 +111,7 @@ G31 X-24.3 Y-34.1
 
 sed "
 {s/#CARIBOU_VARIANT/$CARIBOU_VARIANT/};
-{s/#CARIBOU_MEASUREPOINT/G1 X148.5 Y142.5 F3600                                 ; go to center of the bed/};
+{s/#CARIBOU_MEASUREPOINT/G1 X148.5 Y142.5 F3600                                                 ; go to center of the bed/};
 {/#CARIBOU_ZPROBE/ c\
 M280 P0 S160                                                           ; BLTouch, alarm release\\
 G4 P100                                                                ; BLTouch, delay for the release command

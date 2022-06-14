@@ -83,7 +83,7 @@ sed -i "
 {/#CARIBOU_HOTEND_THERMISTOR/ c\
 ; Hotend (Mosquito or Mosquito Magnum with SE Thermistor) \\
 ;\\
-M308 S1 P\"temp1\" Y\"thermistor\" T500000 B4723 C1.19622e-7 A\"Nozzle\"   ; SE configure sensor 0 as thermistor on pin e0temp\\
+M308 S1 P\"temp1\" Y\"thermistor\" T500000 B4723 C1.19622e-7 A\"Nozzle\"     ; SE configure sensor 0 as thermistor on pin e0temp\\
 ;\\
 M950 H1 C\"out1\" T1                                                     ; create nozzle heater output on e0heat and map it to sensor 1\\
 M307 H1 B0 S1.00                                                       ; disable bang-bang mode for heater 1 and set PWM limit\\
@@ -96,8 +96,8 @@ sed -i "
 {/#CARIBOU_ZPROBE/ c\
 ; BL-Touch Right \\
 ;\\
-M950 S0 C\"io1.out\"                                     ; sensor for BL-Touch\\
-M558 P9 C\"^io1.in\" H2.5 F400 T8000 A1 S0.03            ; for BL-Touch\\
+M950 S0 C\"io1.out\"                                                     ; sensor for BL-Touch\\
+M558 P9 C\"^io1.in\" H2.5 F400 T8000 A1 S0.03                            ; for BL-Touch\\
 M557 X30:230 Y0:200 P7                                 ; define mesh grid
 };
 {/#CARIBOU_OFFSETS/ c\
