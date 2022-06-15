@@ -73,6 +73,13 @@ sed "
 {s/#CARIBOU_MINRETRACTTEMP/$CARIBOU_MINRETRACTTEMP/};
 " < ../config.g > $SysOutputPath/config.g
 
+# replacements for motor currents
+sed -i "
+{/#CARIBOU_MOTOR_CURRENTS/ c\
+M906 X1250 Y1250 Z650 E900 I40                                         ; set motor currents (mA) and motor idle factor in percent
+};
+" $SysOutputPath/config.g
+
 # replacemente SE thermistor
 sed -i "
 {/#CARIBOU_HOTEND_THERMISTOR/ c\
@@ -89,7 +96,7 @@ M143 H1 S365                                                           ; set tem
 # replacements for motor currents
 sed -i "
 {/#CARIBOU_MOTOR_CURRENTS/ c\
-M906 X1250 Y1250 Z650 E900 I40                                         ; set motor currents (mA) and motoridle factor in percent
+M906 X1250 Y1250 Z650 E900 I40                                         ; set motor currents (mA) and motor idle factor in percent
 };
 " $SysOutputPath/config.g
 
@@ -113,7 +120,7 @@ G31 X-24.3 Y-34.1
 
 sed "
 {s/#CARIBOU_VARIANT/$CARIBOU_VARIANT/};
-{s/#CARIBOU_MEASUREPOINT/G1 X148.5 Y142.5 F3600                                                 ; go to center of the bed/};
+{s/#CARIBOU_MEASUREPOINT/G1 X148.5 Y142.5 F3600                                 ; go to center of the bed/};
 {/#CARIBOU_ZPROBE/ c\
 M280 P0 S160                                                           ; BLTouch, alarm release\\
 G4 P100                                                                ; BLTouch, delay for the release command

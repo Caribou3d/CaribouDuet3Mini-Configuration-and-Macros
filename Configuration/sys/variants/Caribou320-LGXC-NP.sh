@@ -71,6 +71,13 @@ sed "
 {s/#CARIBOU_MINRETRACTTEMP/$CARIBOU_MINRETRACTTEMP/};
 " < ../config.g > $SysOutputPath/config.g
 
+# replacements for motor currents
+sed -i "
+{/#CARIBOU_MOTOR_CURRENTS/ c\
+M906 X1250 Y1250 Z650 E650 I40                                         ; set motor currents (mA) and motor idle factor in percent
+};
+" $SysOutputPath/config.g
+
 # replacements for E3d thermistor
 sed -i "
 {/#CARIBOU_HOTEND_THERMISTOR/ c\
@@ -130,8 +137,9 @@ sed "
 # create macro files
 # =========================================================================================================
 
-# copy macros directory to processed folder (for BL-Touch except the Print-Surface Macros)
-find $MacrosDir/* -maxdepth 0  ! \( -name "*Main*" -o -name "*Preheat*" -o -name "*processed*"  \) -exec cp -r -t  $MacroOutputPath {} \+
+# copy macros directory to processed folder
+find $MacrosDir/* -maxdepth 0  ! \( -name "*Main*" -o -name "05-BL-Touch" -o -name "*Preheat*" -o -name "*processed*"  \) -exec cp -r -t  $MacroOutputPath {} \+
+
 mkdir $MacroOutputPath/04-Maintenance
 find $MacrosDir/04-Maintenance/* -maxdepth 0  ! \( -name "*First*" \) -exec cp -r -t  $MacroOutputPath/04-Maintenance {} \+
 cp -r $MacrosDir/04-Maintenance/01-First_Layer_Calibration/processed $MacroOutputPath/04-Maintenance/01-First_Layer_Calibration

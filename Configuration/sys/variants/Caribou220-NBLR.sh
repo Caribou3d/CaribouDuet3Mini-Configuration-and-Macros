@@ -50,8 +50,8 @@ cp -r ../00-Functions $SysOutputPath
 
 sed "
 {s/#CARIBOU_VARIANT/$CARIBOU_VARIANT/};
-{s/G30 P0 X25 Y105 Z-99999    /G30 P0 X35 Y115.5 Z-99999/};
-{s/G30 P1 X240 Y105 Z-99999 S2    /G30 P1 X240 Y115.5 Z-99999 S2/};
+{s/G30 P0 X25 Y105 Z-99999    /G30 P0 X35 Y115.5 Z-99999  /};
+{s/G30 P1 X240 Y105 Z-99999 S2    /G30 P1 X240 Y115.5 Z-99999 S2  /};
 {/#CARIBOU_ZPROBERESET/ c\
 M558 F400 T8000 A1 S0.03                                               ; for BL-Touch
 };
@@ -76,7 +76,7 @@ sed "
 # replacements for motor currents
 sed -i "
 {/#CARIBOU_MOTOR_CURRENTS/ c\
-M906 X1250 Y1250 Z650 E900 I40                                         ; set motor currents (mA) and motoridle factor in percent
+M906 X1250 Y1250 Z650 E900 I40                                         ; set motor currents (mA) and motor idle factor in percent
 };
 " $SysOutputPath/config.g
 
@@ -100,7 +100,7 @@ sed -i "
 ;\\
 M950 S0 C\"io1.out\"                                                     ; sensor for BL-Touch\\
 M558 P9 C\"^io1.in\" H2.5 F400 T8000 A1 S0.03                            ; for BL-Touch\\
-M557 X30:230 Y0:200 P7                                 ; define mesh grid
+M557 X30:230 Y0:200 P7                                                 ; define mesh grid
 };
 {/#CARIBOU_OFFSETS/ c\
 G31 X31.6 Y-10.1
@@ -113,7 +113,7 @@ G31 X31.6 Y-10.1
 
 sed "
 {s/#CARIBOU_VARIANT/$CARIBOU_VARIANT/};
-{s/#CARIBOU_MEASUREPOINT/G1 X97.5 Y115.5 F5000                                  ; go to center of the bed/};
+{s/#CARIBOU_MEASUREPOINT/G1 X97.5 Y115.5 F5000                                                  ; go to center of the bed/};
 {/#CARIBOU_ZPROBE/ c\
 M280 P0 S160                                                           ; BLTouch, alarm release\\
 G4 P100                                                                ; BLTouch, delay for the release command

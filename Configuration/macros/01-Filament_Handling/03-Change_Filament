@@ -9,7 +9,6 @@
 ;
 ; =========================================================================================================
 ;
-T0                                                                     ; select tool T0
 ;
 if heat.heaters[1].current < heat.coldExtrudeTemperature               ; check extrude temperature
     if heat.heaters[1].current < heat.coldRetractTemperature           ; check retract temperature
