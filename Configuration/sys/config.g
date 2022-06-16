@@ -7,7 +7,7 @@
 ; for #CARIBOU_VARIANT
 ;
 ; CariboDuetConfiguration Release : "1.9.2"
-;                           Build :   54
+;                           Build :   55
 ;
 ;
 ; Copyright Caribou Research & Development 2021. Licensed under GPL3. No commercial use.
@@ -160,6 +160,13 @@ M98 P"0:/sys/00-Functions/FilamentsensorStatus"
 ; Offsets - place off-sets for x and y here. z-offsets are handled in the print sheet macros
 ;
 ; #CARIBOU_OFFSETS
+;
+; =========================================================================================================
+;
+;
+; global varibales
+;
+global IdleCounter = 0
 ;
 ; =========================================================================================================
 ;
